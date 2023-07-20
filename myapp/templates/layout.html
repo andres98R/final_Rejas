@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        
+        {% endblock title %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= {% static 'css/styles.css' %} >
+</head>
+<body>
+    <header class="header">
+        <h1>Examen Final LP3</h1>
+        <p>Andres Rejas | Jairo Mendoza | Juan Pablo Rosado</p>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href= {% url 'inicio' %} >Inicio</a>
+            </li>
+            <li>
+                <a href= {% url 'listar_paises' %} >Paises</a>
+            </li>
+            <li>
+                <a href= {% url 'registrar_pais' %} >Registrar país</a>
+            </li>
+            <li>
+                <a href= {% url 'listar_editoriales' %} >Editoriales</a>
+            </li>
+            <li>
+                <a href= {% url 'registrar_editorial' %} >Crear editorial</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+    <footer class="footer">
+        <p>LP3 - 2023</p>
+    </footer>
+</body>
+</html>

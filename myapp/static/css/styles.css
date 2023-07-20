@@ -1,0 +1,88 @@
+/* Estilo del cuerpo del documento */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #F4D160;
+    color: #333;
+    min-height: 100vh; /* Establecer altura mínima del cuerpo para ocupar toda la ventana */
+    display: flex;
+    flex-direction: column; /* Hacer que los elementos hijos se apilen verticalmente */
+}
+
+/* Estilo del enlace */
+a {
+    color: #1D5D9B;
+    text-decoration: none;
+}
+
+/* Estilo de los enlaces al pasar el mouse por encima */
+li:hover {
+    transform: scale(1.0);
+}
+
+/* Estilos para el encabezado (header) */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1D5D9B;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+/* Estilos para la barra de navegación (nav) */
+nav {
+    background-color: #75C2F6;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #1D5D9B;
+    color: #fff;
+}
+
+/* Estilos para el contenido (content) */
+.content {
+    flex: 1; /* Hacer que el contenido se expanda para llenar el espacio disponible */
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FBEEAC;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el pie de página (footer) */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1D5D9B;
+    color: #fff;
+}
