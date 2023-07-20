@@ -6,5 +6,67 @@
 
 {% block content %}
     <h2>{{titulo}}</h2>
-    <p>Listado de Paises</p>
+    <h1>Listado de Paises</h1>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        th:first-child, td:first-child {
+            border-left: 1px solid #ddd;
+        }
+        th:last-child, td:last-child {
+            border-right: 1px solid #ddd;
+        }
+        td {
+            font-size: 14px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Población</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pais in paises %}
+            <tr>
+                <td>{{ pais.codigo }}</td>
+                <td>{{ pais.nombre }}</td>
+                <td>{{ pais.poblacion }}</td>
+                <td>{{ pais.estado }}</td>
+                <td>
+                    <a>Editar</a> |
+                    <a href="{% url 'eliminar_pais' id=pais.idpais %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <p>No hay paises registrados</p>
+            {% endfor %}
+
+        </tbody>
+    </table>
 {% endblock content %}
