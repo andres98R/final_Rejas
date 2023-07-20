@@ -26,4 +26,5 @@ urlpatterns = [
     path("registrar_pais/", views.registrar_pais, name="registrar_pais"),
     path("registrar_editorial/", views.registrar_editorial, name="registrar_editorial"),
     path("eliminar_pais/<int:id>", views.eliminar_pais, name="eliminar_pais"),
+    path("eliminar_editorial/<int:id>", views.eliminar_editorial, name="eliminar_editorial"),
 ]

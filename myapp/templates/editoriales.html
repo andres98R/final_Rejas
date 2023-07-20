@@ -1,10 +1,49 @@
+<!-- en el archivo editorial.html -->
+
 {% extends 'layout.html' %}
 
 {% block title %}
-    {{titulo}}
+    Listado de Editoriales
 {% endblock title %}
 
 {% block content %}
-    <h2>{{titulo}}</h2>
-    <p>Listado de Editoriales</p>
+    <h2>Listado de Editoriales</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>URL</th>
+                <th>Imagen</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for editorial in editoriales %}
+            <tr>
+                <td>{{ editorial.ideditorial }}</td>
+                <td>{{ editorial.nombre }}</td>
+                <td>{{ editorial.url }}</td>
+                <td>
+                    {% if editorial.imagen %}
+                        {{ editorial.imagen.name }}
+                    {% else %}
+                        Sin imagen
+                    {% endif %}
+                </td>
+                <td>{{ editorial.estado }}</td>
+                <td>
+                    <a >Editar</a>|
+                    <a href="{% url 'eliminar_editorial' ideditorial=editorial.ideditorial %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No hay editoriales registradas</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
+

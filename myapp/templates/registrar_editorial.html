@@ -1,10 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    {{titulo}}
+    {{ titulo }}
 {% endblock title %}
 
 {% block content %}
-    <h2>{{titulo}}</h2>
-    <p>Agregar Nueva Editorial</p>
+    <h2>{{ titulo }}</h2>
+    <form action="{%url 'registrar_editorial' %}" method="POST">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required><br>
+
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen"><br>
+
+        <label for="estado">Estado:</label>
+        <input type="checkbox" id="estado" name="estado"><br>
+
+        <input type="submit" value="Guardar">
+    </form>
 {% endblock content %}
